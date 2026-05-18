@@ -1,2 +1,4 @@
 @bhf:registry=https://npm.pkg.github.com
+# For local development, replace YOUR_GITHUB_PAT_HERE with a Classic Personal Access Token 
+# with 'read:packages' scope.
 //npm.pkg.github.com/:_authToken=YOUR_GITHUB_PAT_HERE
