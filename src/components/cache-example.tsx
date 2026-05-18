@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AeronCacheClient } from "@bhf/aeron-cache-embedded-client";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -29,8 +29,12 @@ export function CacheExample() {
       const client = getClient();
       const response = await client.createCache(cacheName);
       setStatus(`Cache created: ${JSON.stringify(response)}`);
-    } catch (err: any) {
-      setStatus(`Error: ${err.message || "Failed to create cache"}`);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setStatus(`Error: ${err.message}`);
+      } else {
+        setStatus("Error: Failed to create cache");
+      }
     } finally {
       setLoading(false);
     }
@@ -43,8 +47,12 @@ export function CacheExample() {
       const client = getClient();
       const response = await client.putItem(cacheName, key, value);
       setStatus(`Item put: ${JSON.stringify(response)}`);
-    } catch (err: any) {
-      setStatus(`Error: ${err.message || "Failed to put item"}`);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setStatus(`Error: ${err.message}`);
+      } else {
+        setStatus("Error: Failed to put item");
+      }
     } finally {
       setLoading(false);
     }
