@@ -1,3 +1,7 @@
+![img.png](https://raw.githubusercontent.com/bhf/aeron-cache/refs/heads/main/docs/images/header.png)
+
+[![CI](https://github.com/bhf/aeron-cache-starter-nextjs/actions/workflows/ci.yml/badge.svg)](https://github.com/bhf/aeron-cache-starter-nextjs/actions/workflows/ci.yml)
+
 # Aeron Cache Next.js Starter
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and configured for **Aeron Cache Embedded**.
